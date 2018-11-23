@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.aryparamartha.printit.Api.ApiClient;
 import com.example.aryparamartha.printit.Api.ApiService;
+import com.example.aryparamartha.printit.Utils.PreferencesHelper;
 import com.example.aryparamartha.printit.model.Login;
 import com.example.aryparamartha.printit.model.ResponseLogin;
 import com.example.aryparamartha.printit.model.User;
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected TextView tvRegister;
     protected EditText etEmail, etPassword;
     private ApiService service;
+    private PreferencesHelper preferencesHelper;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -47,17 +49,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnLogin.setOnClickListener(this);
         tvRegister.setOnClickListener(this);
         service= ApiClient.getService();
+
+        preferencesHelper = new PreferencesHelper(this);
     }
 
-    public void saveInfo(Login login){
-        SharedPreferences sharedPref = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("email", etEmail.getText().toString());
-        editor.putString("password", etPassword.getText().toString());
-        editor.putString("token", login.getSuccess().getToken());
-        editor.apply();
-    }
+//    public void saveInfo(Login login){
+//        SharedPreferences sharedPref = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+//
+//        SharedPreferences.Editor editor = sharedPref.edit();
+//        editor.putString("email", etEmail.getText().toString());
+//        editor.putString("password", etPassword.getText().toString());
+//        editor.putString("token", login.getSuccess().getToken());
+//        editor.apply();
+//    }
 
 
     @Override
@@ -71,7 +75,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             ResponseLogin responseLogin = response.body();
                             User user = new User();
                             user = responseLogin.getUser();
-                            if(user.getAdminStatus() == 1){
+                            if(user.getAdminStatus().equals("1")){
                                 startActivity(new Intent(LoginActivity.this, AdminActivity.class));
                             } else {
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
@@ -88,8 +92,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 break;
             case R.id.tv_register:
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
                 break;
         }
     }
-
 }

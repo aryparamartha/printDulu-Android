@@ -28,6 +28,7 @@
         </service>
 
         <activity android:name=".AdminActivity"></activity>
+        <activity android:name=".RegisterActivity"></activity>
     </application>
 
 </manifest>
