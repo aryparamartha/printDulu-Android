@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/HomeFragment">
+    <TextView
+        android:id="@+id/promo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Info dan Promo"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="20dp"/>
+    <ViewFlipper
+        android:id="@+id/flipper_view"
+        android:layout_below="@+id/promo"
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+    </ViewFlipper>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_below="@+id/flipper_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:scrollbars="vertical"
+        android:background="#c5c5ec"/>
+
+
+</RelativeLayout>
