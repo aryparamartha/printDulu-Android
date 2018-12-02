@@ -11,6 +11,10 @@ public class FileItem {
         mDetailFile = DetailFile;
     }
 
+    public void changeText1(String text){
+        mNamaFile = text;
+    }
+
     public int getmImageResource(){
         return mImageResource;
     }

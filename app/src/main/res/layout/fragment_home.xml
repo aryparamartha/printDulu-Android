@@ -19,7 +19,7 @@
     </ViewFlipper>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/profile_rv"
         android:layout_below="@+id/flipper_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

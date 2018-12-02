@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             preferencesHelper.setUserLogin(responseLogin);
 //                            user = responseLogin.getAdminStatus();
                             if(responseLogin.getAdminStatus()==1){
-                                startActivity(new Intent(LoginActivity.this, AdminActivity.class));
+                                startActivity(new Intent(LoginActivity.this, AdminMainActivity.class));
                             } else {
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             }
