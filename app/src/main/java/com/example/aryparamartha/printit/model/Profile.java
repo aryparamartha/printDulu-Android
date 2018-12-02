@@ -2,7 +2,7 @@ package com.example.aryparamartha.printit.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class User{
+public class Profile{
 
 	@SerializedName("address")
 	private String address;
@@ -16,20 +16,23 @@ public class User{
 	@SerializedName("name")
 	private String name;
 
+	@SerializedName("rek_bank")
+	private Object rekBank;
+
 	@SerializedName("admin_status")
 	private int adminStatus;
 
 	@SerializedName("created_at")
 	private String createdAt;
 
+	@SerializedName("email_verified_at")
+	private Object emailVerifiedAt;
+
 	@SerializedName("id")
 	private int id;
 
 	@SerializedName("email")
 	private String email;
-
-	@SerializedName("rek_bank")
-	private String rekBank;
 
 	public void setAddress(String address){
 		this.address = address;
@@ -63,6 +66,14 @@ public class User{
 		return name;
 	}
 
+	public void setRekBank(Object rekBank){
+		this.rekBank = rekBank;
+	}
+
+	public Object getRekBank(){
+		return rekBank;
+	}
+
 	public void setAdminStatus(int adminStatus){
 		this.adminStatus = adminStatus;
 	}
@@ -77,6 +88,14 @@ public class User{
 
 	public String getCreatedAt(){
 		return createdAt;
+	}
+
+	public void setEmailVerifiedAt(Object emailVerifiedAt){
+		this.emailVerifiedAt = emailVerifiedAt;
+	}
+
+	public Object getEmailVerifiedAt(){
+		return emailVerifiedAt;
 	}
 
 	public void setId(int id){
@@ -95,28 +114,20 @@ public class User{
 		return email;
 	}
 
-	public void setRekBank(){
-		this.rekBank = rekBank;
-	}
-
-	public String getRekBank(){
-		return rekBank;
-	}
-
-
 	@Override
  	public String toString(){
 		return 
-			"User{" + 
+			"Profile{" + 
 			"address = '" + address + '\'' + 
 			",updated_at = '" + updatedAt + '\'' + 
 			",phone = '" + phone + '\'' + 
 			",name = '" + name + '\'' + 
+			",rek_bank = '" + rekBank + '\'' + 
 			",admin_status = '" + adminStatus + '\'' + 
 			",created_at = '" + createdAt + '\'' + 
+			",email_verified_at = '" + emailVerifiedAt + '\'' + 
 			",id = '" + id + '\'' + 
-			",email = '" + email + '\'' +
-			",rek_bank = '" + rekBank + '\''+
+			",email = '" + email + '\'' + 
 			"}";
 		}
 }
