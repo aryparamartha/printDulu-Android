@@ -41,7 +41,7 @@ public class ApiClient {
                     }
                 }).build();
         Retrofit retrofit= new Retrofit.Builder()
-                .baseUrl("http://192.168.1.71:8000/api/")
+                .baseUrl("http://192.168.43.12:8000/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

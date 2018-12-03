@@ -58,7 +58,6 @@ public class PreferencesHelper {
         setLogin(true);
         setToken(responseLogin.getToken());
         setName(responseLogin.getName());
-        setUserType(responseLogin.getAdminStatus());
     }
 
     public void logout(){

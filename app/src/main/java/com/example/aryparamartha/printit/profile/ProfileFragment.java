@@ -1,6 +1,8 @@
 package com.example.aryparamartha.printit.profile;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -60,6 +62,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener, P
                 preferencesHelper.logout();
                 Intent intent = new Intent(getContext(), LoginActivity.class);
                 getActivity().startActivity(intent);
+                SharedPreferences pref = getContext().getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.clear();
+                editor.commit();
                 getActivity().finish();
                 break;
             case R.id.save_profile:

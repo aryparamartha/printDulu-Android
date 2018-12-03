@@ -20,7 +20,7 @@ public class UserLogin{
 	private Object rekBank;
 
 	@SerializedName("admin_status")
-	private int adminStatus;
+	private String adminStatus;
 
 	@SerializedName("created_at")
 	private String createdAt;
@@ -77,11 +77,11 @@ public class UserLogin{
 		return rekBank;
 	}
 
-	public void setAdminStatus(int adminStatus){
+	public void setAdminStatus(String adminStatus){
 		this.adminStatus = adminStatus;
 	}
 
-	public int getAdminStatus(){
+	public String getAdminStatus(){
 		return adminStatus;
 	}
 
@@ -127,19 +127,19 @@ public class UserLogin{
 
 	@Override
  	public String toString(){
-		return 
-			"UserLogin{" + 
-			"address = '" + address + '\'' + 
-			",updated_at = '" + updatedAt + '\'' + 
-			",phone = '" + phone + '\'' + 
-			",name = '" + name + '\'' + 
-			",rek_bank = '" + rekBank + '\'' + 
-			",admin_status = '" + adminStatus + '\'' + 
-			",created_at = '" + createdAt + '\'' + 
-			",email_verified_at = '" + emailVerifiedAt + '\'' + 
-			",id = '" + id + '\'' + 
-			",email = '" + email + '\'' + 
-			",token = '" + token + '\'' + 
+		return
+			"UserLogin{" +
+			"address = '" + address + '\'' +
+			",updated_at = '" + updatedAt + '\'' +
+			",phone = '" + phone + '\'' +
+			",name = '" + name + '\'' +
+			",rek_bank = '" + rekBank + '\'' +
+			",admin_status = '" + adminStatus + '\'' +
+			",created_at = '" + createdAt + '\'' +
+			",email_verified_at = '" + emailVerifiedAt + '\'' +
+			",id = '" + id + '\'' +
+			",email = '" + email + '\'' +
+			",token = '" + token + '\'' +
 			"}";
 		}
 }

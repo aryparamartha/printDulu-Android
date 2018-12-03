@@ -52,6 +52,8 @@ public class UserHomeFragment extends Fragment {
             public void onItemClick(int position) {
                 fileList.get(position).changeText1("Clicked");
                 mAdapter.notifyItemChanged(position);
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
             }
         });
     }

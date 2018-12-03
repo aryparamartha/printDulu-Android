@@ -14,8 +14,8 @@ public class AdminMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home_admin);
 
-        BottomNavigationView bottomNav = findViewById(R.id.admin_bottom_navigation);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        BottomNavigationView bottomNav = (BottomNavigationView) findViewById(R.id.admin_bottom_navigation);
+//        bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.admin_nav_home,new AdminHomeFragment()).commit();
     }
@@ -29,8 +29,6 @@ public class AdminMainActivity extends AppCompatActivity {
                 case R.id.admin_nav_home:
                     selectedFragment = new AdminHomeFragment();
                     break;
-            }
-            switch (menuItem.getItemId()){
                 case R.id.admin_nav_profile:
                     selectedFragment = new AdminProfileFragment();
                     break;

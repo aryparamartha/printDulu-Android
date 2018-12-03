@@ -17,13 +17,13 @@ public class User{
 	private String name;
 
 	@SerializedName("admin_status")
-	private int adminStatus;
+	private String adminStatus;
 
 	@SerializedName("created_at")
 	private String createdAt;
 
 	@SerializedName("id")
-	private int id;
+	private String id;
 
 	@SerializedName("email")
 	private String email;
@@ -63,11 +63,11 @@ public class User{
 		return name;
 	}
 
-	public void setAdminStatus(int adminStatus){
+	public void setAdminStatus(String adminStatus){
 		this.adminStatus = adminStatus;
 	}
 
-	public int getAdminStatus(){
+	public String getAdminStatus(){
 		return adminStatus;
 	}
 
@@ -79,11 +79,11 @@ public class User{
 		return createdAt;
 	}
 
-	public void setId(int id){
+	public void setId(String id){
 		this.id = id;
 	}
 
-	public int getId(){
+	public String getId(){
 		return id;
 	}
 
