@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/newFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detail File"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:paddingBottom="25dp"/>
+
+    <ScrollView
+        android:layout_below="@+id/newFile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama File"
+                android:textSize="18dp"
+                android:paddingLeft="5dp"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/file_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="File 1"
+                android:layout_below="@+id/nama"/>
+
+            <TextView
+                android:id="@+id/fileLoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="Lokasi File"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_below="@+id/file_name"/>
+            <EditText
+                android:id="@+id/filePath"
+                android:layout_width="290dp"
+                android:paddingLeft="5dp"
+                android:layout_height="wrap_content"
+                android:text="Android/Download/File1.pdf"
+                android:layout_below="@+id/fileLoc"/>
+            <Button
+                android:id="@+id/buttonOpen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buka File"
+                android:layout_below="@id/fileLoc"
+                android:layout_toRightOf="@id/filePath"/>
+
+            <TextView
+                android:id="@+id/jasa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Harga Jasa"
+                android:textSize="18dp"
+                android:paddingLeft="5dp"
+                android:layout_below="@id/filePath"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="18000"
+                android:layout_below="@+id/jasa"/>
+
+            <TextView
+                android:id="@+id/bukti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="Bukti Pembayaran"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_below="@+id/price"/>
+            <EditText
+                android:id="@+id/buktiPath"
+                android:layout_width="290dp"
+                android:paddingLeft="5dp"
+                android:layout_height="wrap_content"
+                android:text="Android/Download/Bukti.jpg"
+                android:layout_below="@+id/bukti"/>
+            <Button
+                android:id="@+id/buttonUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buka File"
+                android:layout_below="@id/bukti"
+                android:layout_toRightOf="@id/buktiPath"/>
+
+            <TextView
+                android:id="@+id/detailPrint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="Detail Format Print"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_below="@id/buktiPath"/>
+            <EditText
+                android:id="@+id/printFormat"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:text="Ukuran Kertas A4, Jilid Mika Bening"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/detailPrint"
+                android:background="@drawable/border"/>
+
+            <RelativeLayout
+                android:layout_below="@id/printFormat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/sendFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ubah Pesanan"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
