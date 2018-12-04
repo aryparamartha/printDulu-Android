@@ -9,12 +9,19 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PROFILE"
+            android:text="User Profile"
             android:textSize="20dp"
             android:textStyle="bold"
             android:textColor="#000"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/schwi"
+            android:layout_gravity="center"/>
         <LinearLayout
+            android:id="@+id/profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -22,8 +29,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Profile Name"
+                android:textSize="18dp"
+                android:textStyle="bold"
                 android:textColor="#033"/>
             <EditText
+                android:id="@+id/nama_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -32,8 +42,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Alamat Rumah"
+                android:textSize="18dp"
+                android:textStyle="bold"
                 android:textColor="#033"/>
             <EditText
+                android:id="@+id/alamat_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -42,12 +55,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nomor Handphone"
+                android:textSize="18dp"
+                android:textStyle="bold"
                 android:textColor="#033"/>
             <EditText
+                android:id="@+id/hp_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/save_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save Profile"
+                android:textColor="#001"
+                android:layout_gravity="center_horizontal"/>
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/buttonLogOut"
                 android:layout_width="wrap_content"
@@ -55,7 +84,9 @@
                 android:text="Log Out"
                 android:textColor="#001"
                 android:layout_gravity="center_horizontal"/>
+
         </LinearLayout>
     </LinearLayout>
+
 
 </RelativeLayout>

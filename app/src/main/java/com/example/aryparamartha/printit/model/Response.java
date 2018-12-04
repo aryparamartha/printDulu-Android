@@ -1,6 +1,7 @@
 package com.example.aryparamartha.printit.model;
 
 import com.google.gson.annotations.SerializedName;
+
 public class Response{
 
 	@SerializedName("success")

@@ -2,7 +2,7 @@ package com.example.aryparamartha.printit.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class User{
+public class UserLogin{
 
 	@SerializedName("address")
 	private String address;
@@ -16,20 +16,26 @@ public class User{
 	@SerializedName("name")
 	private String name;
 
+	@SerializedName("rek_bank")
+	private Object rekBank;
+
 	@SerializedName("admin_status")
 	private String adminStatus;
 
 	@SerializedName("created_at")
 	private String createdAt;
 
+	@SerializedName("email_verified_at")
+	private Object emailVerifiedAt;
+
 	@SerializedName("id")
-	private String id;
+	private int id;
 
 	@SerializedName("email")
 	private String email;
 
-	@SerializedName("rek_bank")
-	private String rekBank;
+	@SerializedName("token")
+	private String token;
 
 	public void setAddress(String address){
 		this.address = address;
@@ -63,6 +69,14 @@ public class User{
 		return name;
 	}
 
+	public void setRekBank(Object rekBank){
+		this.rekBank = rekBank;
+	}
+
+	public Object getRekBank(){
+		return rekBank;
+	}
+
 	public void setAdminStatus(String adminStatus){
 		this.adminStatus = adminStatus;
 	}
@@ -79,11 +93,19 @@ public class User{
 		return createdAt;
 	}
 
-	public void setId(String id){
+	public void setEmailVerifiedAt(Object emailVerifiedAt){
+		this.emailVerifiedAt = emailVerifiedAt;
+	}
+
+	public Object getEmailVerifiedAt(){
+		return emailVerifiedAt;
+	}
+
+	public void setId(int id){
 		this.id = id;
 	}
 
-	public String getId(){
+	public int getId(){
 		return id;
 	}
 
@@ -95,28 +117,29 @@ public class User{
 		return email;
 	}
 
-	public void setRekBank(){
-		this.rekBank = rekBank;
+	public void setToken(String token){
+		this.token = token;
 	}
 
-	public String getRekBank(){
-		return rekBank;
+	public String getToken(){
+		return token;
 	}
-
 
 	@Override
  	public String toString(){
-		return 
-			"User{" + 
-			"address = '" + address + '\'' + 
-			",updated_at = '" + updatedAt + '\'' + 
-			",phone = '" + phone + '\'' + 
-			",name = '" + name + '\'' + 
-			",admin_status = '" + adminStatus + '\'' + 
-			",created_at = '" + createdAt + '\'' + 
-			",id = '" + id + '\'' + 
+		return
+			"UserLogin{" +
+			"address = '" + address + '\'' +
+			",updated_at = '" + updatedAt + '\'' +
+			",phone = '" + phone + '\'' +
+			",name = '" + name + '\'' +
+			",rek_bank = '" + rekBank + '\'' +
+			",admin_status = '" + adminStatus + '\'' +
+			",created_at = '" + createdAt + '\'' +
+			",email_verified_at = '" + emailVerifiedAt + '\'' +
+			",id = '" + id + '\'' +
 			",email = '" + email + '\'' +
-			",rek_bank = '" + rekBank + '\''+
+			",token = '" + token + '\'' +
 			"}";
 		}
 }

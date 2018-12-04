@@ -3,12 +3,11 @@ package com.example.aryparamartha.printit.Utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.example.aryparamartha.printit.model.ResponseLogin;
-import com.example.aryparamartha.printit.model.User;
+import com.example.aryparamartha.printit.model.UserLogin;
 
 public class PreferencesHelper {
     private SharedPreferences sharedPreferences;
-    private final String PREFERENCES_NAME = "shared_preferences";
+    private final String PREFERENCES_NAME = "userInfo";
     private final String LOGIN="login";
     private final String TOKEN="token";
     private final String NAME="name";
@@ -45,21 +44,20 @@ public class PreferencesHelper {
         return sharedPreferences.getString(NAME,"");
     }
 
-    public void setUserType(String userType){
+    public void setUserType(int userType){
         sharedPreferences.edit()
-                .putString(USER_TYPE,userType)
+                .putInt(USER_TYPE,userType)
                 .apply();
     }
 
-    public String getUserType(){
-        return sharedPreferences.getString(USER_TYPE,"1");
+    public int getUserType(){
+        return sharedPreferences.getInt(USER_TYPE,0);
     }
 
-    public void setUserLogin(User user, ResponseLogin responseLogin){
+    public void setUserLogin(UserLogin responseLogin){
         setLogin(true);
         setToken(responseLogin.getToken());
-        setName(user.getName());
-        setUserType(user.getAdminStatus());
+        setName(responseLogin.getName());
     }
 
     public void logout(){

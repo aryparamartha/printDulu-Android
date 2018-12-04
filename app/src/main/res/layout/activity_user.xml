@@ -1,35 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserActivity">
+     <LinearLayout
+         android:id="@+id/layout_profile"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical">
+         <TextView
+             android:id="@+id/nama"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Nama Profil"
+             android:textStyle="bold"
+             android:textSize="20dp"/>
+         <EditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/edit_name"
+             android:hint="Prastha"
+             android:inputType="text"/>
 
-    <EditText
+         <TextView
+             android:id="@+id/email"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Email"
+             android:textStyle="bold"
+             android:textSize="20dp"/>
+         <EditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/edit_email"
+             android:hint="madeprasthan@yahoo.com"
+             android:inputType="textEmailAddress"/>
+
+         <TextView
+             android:id="@+id/hp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Nomor HP"
+             android:textStyle="bold"
+             android:textSize="20dp"/>
+         <EditText
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/edit_phone"
+             android:hint="082236342404"
+             android:inputType="number"/>
+     </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_name"
-        android:hint="Edit Name"
-        android:inputType="text"/>
+        android:layout_below="@+id/layout_profile"
+        android:gravity="center">
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SAVE"/>
+    </LinearLayout>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/edit_email"
-        android:hint="Edit Email"
-        android:inputType="text"/>
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/edit_phone"
-        android:hint="Edit Phone"
-        android:inputType="number"/>
-
-    <Button
-        android:id="@+id/button_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SAVE"/>
-</LinearLayout>
+</RelativeLayout>

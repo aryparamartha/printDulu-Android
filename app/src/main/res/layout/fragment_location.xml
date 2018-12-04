@@ -3,11 +3,22 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/loc_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Location Fragment"
+        android:text="Lokasi yang Tersedia:"
         android:textStyle="bold"
-        android:textSize="50dp"
-        android:textAlignment="center"/>
+        android:textSize="20dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/location_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:scrollbars="vertical"
+        android:background="#f19204"
+        android:layout_below="@+id/loc_header">
+
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

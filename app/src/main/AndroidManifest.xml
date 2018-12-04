@@ -27,7 +27,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".AdminActivity"></activity>
+        <activity android:name=".AdminMainActivity"></activity>
         <activity android:name=".RegisterActivity"></activity>
     </application>
 

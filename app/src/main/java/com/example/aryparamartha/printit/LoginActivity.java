@@ -14,9 +14,7 @@ import android.widget.Toast;
 import com.example.aryparamartha.printit.Api.ApiClient;
 import com.example.aryparamartha.printit.Api.ApiService;
 import com.example.aryparamartha.printit.Utils.PreferencesHelper;
-import com.example.aryparamartha.printit.model.Login;
-import com.example.aryparamartha.printit.model.ResponseLogin;
-import com.example.aryparamartha.printit.model.User;
+import com.example.aryparamartha.printit.model.UserLogin;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -47,12 +45,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
            Intent intent = new Intent(this, MainActivity.class);
            startActivity(intent);
            finish();
+        }else{
+            Toast.makeText(this,"tes",Toast.LENGTH_LONG).show();
         }
+
+        preferencesHelper = new PreferencesHelper(  this);
 
         btnLogin.setOnClickListener(this);
         tvRegister.setOnClickListener(this);
-        service= ApiClient.getService();
+        service= ApiClient.getService(this);
 
+<<<<<<< HEAD
+=======
+//        preferencesHelper = new PreferencesHelper(this);
+>>>>>>> db7525bfc631a7ceb252419d25bc8c6a770c20c4
     }
 
 //    public void saveInfo(Login login){
@@ -70,10 +76,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_login:
-                service.login(etEmail.getText().toString(), etPassword.getText().toString()).enqueue(new Callback<ResponseLogin>() {
+                service.login(etEmail.getText().toString(), etPassword.getText().toString()).enqueue(new Callback<UserLogin>() {
                     @Override
-                    public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
+                    public void onResponse(Call<UserLogin> call, Response<UserLogin> response) {
                         if(response.isSuccessful()) {
+<<<<<<< HEAD
                             preferencesHelper.setToken(response.body().getToken());
 
                             ResponseLogin responseLogin = response.body();
@@ -81,16 +88,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             user = responseLogin.getUser();
                             if(user.getAdminStatus().equals("1")){
                                 startActivity(new Intent(LoginActivity.this, AdminActivity.class));
+=======
+                            UserLogin responseLogin = response.body();
+                            preferencesHelper.setUserLogin(responseLogin);
+//                            user = responseLogin.getAdminStatus();
+                            if(responseLogin.getAdminStatus().equals("1")){
+                                startActivity(new Intent(LoginActivity.this, AdminMainActivity.class));
+>>>>>>> db7525bfc631a7ceb252419d25bc8c6a770c20c4
                             } else {
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                             }
                         } else {
-                            Toast.makeText(LoginActivity.this, ""+response.message(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "ahhaha"+response.message(), Toast.LENGTH_SHORT).show();
                         }
                     }
                     @Override
-                    public void onFailure(Call<ResponseLogin> call, Throwable t) {
-                        Toast.makeText(LoginActivity.this, ""+t, Toast.LENGTH_SHORT).show();
+                    public void onFailure(Call<UserLogin> call, Throwable t) {
+                        Toast.makeText(LoginActivity.this, "failre"+t, Toast.LENGTH_SHORT).show();
                     }
                 });
 //                startActivity(new Intent(LoginActivity.this, MainActivity.class));

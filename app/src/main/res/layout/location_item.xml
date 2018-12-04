@@ -9,33 +9,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="4dp">
-        
+
         <ImageView
-            android:id="@+id/image_view"
+            android:id="@+id/loc_img"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:padding="2dp"
-            android:src="@drawable/file"/>
+            android:src="@drawable/location"/>
 
         <TextView
-            android:id="@+id/nama_file"
+            android:id="@+id/loc_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:text="File 1"
+            android:text="Lokasi 1"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="#000"
-            android:layout_toRightOf="@+id/image_view" />
+            android:layout_toRightOf="@+id/loc_img" />
 
         <TextView
-            android:id="@+id/detail_file"
+            android:id="@+id/loc_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/nama_file"
-            android:text="Detail File"
+            android:layout_below="@+id/loc_name"
+            android:text="Jalan Bukit"
             android:textSize="15sp"
-            android:layout_toRightOf="@+id/image_view"
+            android:layout_toRightOf="@+id/loc_img"
             android:layout_marginLeft="8dp" />
 
     </RelativeLayout>
