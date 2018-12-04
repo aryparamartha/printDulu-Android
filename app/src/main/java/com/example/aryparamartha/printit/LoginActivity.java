@@ -38,9 +38,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         etEmail=findViewById(R.id.et_email);
         etPassword=findViewById(R.id.et_password);
 
+        preferencesHelper = new PreferencesHelper(this);
         SharedPreferences sharedPref = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
 
-        if(sharedPref.contains("token")){
+        //if(sharedPref.contains("token")){
+        if(!preferencesHelper.getToken().equals("")){
+
            Intent intent = new Intent(this, MainActivity.class);
            startActivity(intent);
            finish();
@@ -50,7 +53,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         tvRegister.setOnClickListener(this);
         service= ApiClient.getService();
 
-        preferencesHelper = new PreferencesHelper(this);
     }
 
 //    public void saveInfo(Login login){
@@ -72,6 +74,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
                         if(response.isSuccessful()) {
+                            preferencesHelper.setToken(response.body().getToken());
+
                             ResponseLogin responseLogin = response.body();
                             User user = new User();
                             user = responseLogin.getUser();

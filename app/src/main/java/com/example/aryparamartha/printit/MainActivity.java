@@ -28,30 +28,30 @@ public class MainActivity extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, new HomeFragment()).commit();
-        getListData();
+        //getListData();
     }
 
-    public void getListData() {
-//        UserDAO userDAO = new UserDAO(this);
-//        final List<User> userList = userDAO.getAllData();
+//    public void getListData() {
+////        UserDAO userDAO = new UserDAO(this);
+////        final List<User> userList = userDAO.getAllData();
+////
+////        final ListView listView = (ListView) findViewById(R.id.list_view);
+////
+////        ArrayAdapter<User> adapter = new ArrayAdapter<User>(this, android.R.layout.simple_list_item_1, android.R.id.text1, userList);
+////
+////        listView.setAdapter(adapter);
+////
+////        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+////            @Override
+////            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+////                int itemPosition = position;
+////
+////                User user = userList.get(position);
+////            }
+////        });
 //
-//        final ListView listView = (ListView) findViewById(R.id.list_view);
-//
-//        ArrayAdapter<User> adapter = new ArrayAdapter<User>(this, android.R.layout.simple_list_item_1, android.R.id.text1, userList);
-//
-//        listView.setAdapter(adapter);
-//
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-//                int itemPosition = position;
-//
-//                User user = userList.get(position);
-//            }
-//        });
-
-        //
-    }
+//        //
+//    }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
