@@ -14,7 +14,7 @@
         android:id="@+id/location_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="4dp"
+        android:padding="1dp"
         android:scrollbars="vertical"
         android:background="#f19204"
         android:layout_below="@+id/loc_header">

@@ -27,22 +27,24 @@ public class ApiClient {
                             request=chain
                                     .request()
                                     .newBuilder()
-                                    .addHeader("Context-Type", "application/json")
+                                    .addHeader("Accept", "application/json")
                                     .addHeader("Authorization", "Bearer "+preferencesHelper.getToken())
                                     .build();
                         }else {
                             request=chain
                                     .request()
                                     .newBuilder()
-                                    .addHeader("Context-Type", "application/json")
+                                    .addHeader("Accept", "application/json")
                                     .build();
                         }
                         return chain.proceed(request);
                     }
                 }).build();
+
         Retrofit retrofit= new Retrofit.Builder()
                 .baseUrl("http://192.168.43.12:8000/api/")
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
                 .build();
 
         return retrofit.create(ApiService.class);

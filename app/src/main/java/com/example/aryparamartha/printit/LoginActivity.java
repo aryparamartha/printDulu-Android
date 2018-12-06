@@ -13,7 +13,9 @@ import android.widget.Toast;
 
 import com.example.aryparamartha.printit.Api.ApiClient;
 import com.example.aryparamartha.printit.Api.ApiService;
+import com.example.aryparamartha.printit.User.MainMenu.UserMainActivity;
 import com.example.aryparamartha.printit.Utils.PreferencesHelper;
+import com.example.aryparamartha.printit.Vendor.VendorMainActivity;
 import com.example.aryparamartha.printit.model.UserLogin;
 
 import retrofit2.Call;
@@ -39,7 +41,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         SharedPreferences sharedPref = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
 
         if(sharedPref.contains("token")){
-           Intent intent = new Intent(this, MainActivity.class);
+           Intent intent = new Intent(this, UserMainActivity.class);
            startActivity(intent);
            finish();
         }else{
@@ -78,9 +80,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             preferencesHelper.setUserLogin(responseLogin);
 //                            user = responseLogin.getAdminStatus();
                             if(responseLogin.getAdminStatus().equals("1")){
-                                startActivity(new Intent(LoginActivity.this, AdminMainActivity.class));
+                                startActivity(new Intent(LoginActivity.this, VendorMainActivity.class));
                             } else {
-                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                startActivity(new Intent(LoginActivity.this, UserMainActivity.class));
                             }
                         } else {
                             Toast.makeText(LoginActivity.this, "ahhaha"+response.message(), Toast.LENGTH_SHORT).show();
@@ -91,7 +93,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         Toast.makeText(LoginActivity.this, "failre"+t, Toast.LENGTH_SHORT).show();
                     }
                 });
-//                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//                startActivity(new Intent(LoginActivity.this, UserMainActivity.class));
                 break;
             case R.id.tv_register:
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));

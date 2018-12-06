@@ -1,4 +1,4 @@
-package com.example.aryparamartha.printit;
+package com.example.aryparamartha.printit.User.MainMenu;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.aryparamartha.printit.R;
 
 import java.util.ArrayList;
 
@@ -52,7 +54,7 @@ public class UserHomeFragment extends Fragment {
             public void onItemClick(int position) {
                 fileList.get(position).changeText1("Clicked");
                 mAdapter.notifyItemChanged(position);
-                Intent intent = new Intent(getActivity(), MainActivity.class);
+                Intent intent = new Intent(getActivity(), UserMainActivity.class);
                 startActivity(intent);
             }
         });

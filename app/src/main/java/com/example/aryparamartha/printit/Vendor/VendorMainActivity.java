@@ -1,4 +1,4 @@
-package com.example.aryparamartha.printit;
+package com.example.aryparamartha.printit.Vendor;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,17 +7,18 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-public class AdminMainActivity extends AppCompatActivity {
+import com.example.aryparamartha.printit.R;
+
+public class VendorMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_home_admin);
+        setContentView(R.layout.activity_main_admin);
 
         BottomNavigationView bottomNav = (BottomNavigationView) findViewById(R.id.admin_bottom_navigation);
-//        bottomNav.setOnNavigationItemSelectedListener(navListener);
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.admin_nav_home,new AdminHomeFragment()).commit();
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        getSupportFragmentManager().beginTransaction().add(R.id.admin_fragment_container,new VendorHomeFragment()).commit();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -27,10 +28,10 @@ public class AdminMainActivity extends AppCompatActivity {
 
             switch (menuItem.getItemId()){
                 case R.id.admin_nav_home:
-                    selectedFragment = new AdminHomeFragment();
+                    selectedFragment = new VendorHomeFragment();
                     break;
                 case R.id.admin_nav_profile:
-                    selectedFragment = new AdminProfileFragment();
+                    selectedFragment = new VendorProfileFragment();
                     break;
             }
 

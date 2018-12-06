@@ -3,6 +3,9 @@ package com.example.aryparamartha.printit.Api;
 import com.example.aryparamartha.printit.model.Profile;
 import com.example.aryparamartha.printit.model.ResponseRegister;
 import com.example.aryparamartha.printit.model.UserLogin;
+import com.example.aryparamartha.printit.model.UserVendor;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -40,6 +43,9 @@ public interface ApiService {
             @Field("phone") String phone,
             @Field("address") String address
     );
+
+    @GET("user/vendor")
+    Call<List<UserVendor>> showVendor();
 
 
 }
