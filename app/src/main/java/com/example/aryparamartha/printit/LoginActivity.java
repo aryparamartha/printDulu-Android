@@ -13,7 +13,9 @@ import android.widget.Toast;
 
 import com.example.aryparamartha.printit.Api.ApiClient;
 import com.example.aryparamartha.printit.Api.ApiService;
+import com.example.aryparamartha.printit.User.MainMenu.UserMainActivity;
 import com.example.aryparamartha.printit.Utils.PreferencesHelper;
+import com.example.aryparamartha.printit.Vendor.VendorMainActivity;
 import com.example.aryparamartha.printit.model.UserLogin;
 
 import retrofit2.Call;
@@ -36,13 +38,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         etEmail=findViewById(R.id.et_email);
         etPassword=findViewById(R.id.et_password);
 
-        preferencesHelper = new PreferencesHelper(this);
         SharedPreferences sharedPref = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
 
-        //if(sharedPref.contains("token")){
-        if(!preferencesHelper.getToken().equals("")){
-
-           Intent intent = new Intent(this, MainActivity.class);
+        if(sharedPref.contains("token")){
+           Intent intent = new Intent(this, UserMainActivity.class);
            startActivity(intent);
            finish();
         }else{
@@ -55,10 +54,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         tvRegister.setOnClickListener(this);
         service= ApiClient.getService(this);
 
-<<<<<<< HEAD
-=======
 //        preferencesHelper = new PreferencesHelper(this);
->>>>>>> db7525bfc631a7ceb252419d25bc8c6a770c20c4
     }
 
 //    public void saveInfo(Login login){
@@ -80,23 +76,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onResponse(Call<UserLogin> call, Response<UserLogin> response) {
                         if(response.isSuccessful()) {
-<<<<<<< HEAD
-                            preferencesHelper.setToken(response.body().getToken());
-
-                            ResponseLogin responseLogin = response.body();
-                            User user = new User();
-                            user = responseLogin.getUser();
-                            if(user.getAdminStatus().equals("1")){
-                                startActivity(new Intent(LoginActivity.this, AdminActivity.class));
-=======
                             UserLogin responseLogin = response.body();
                             preferencesHelper.setUserLogin(responseLogin);
 //                            user = responseLogin.getAdminStatus();
                             if(responseLogin.getAdminStatus().equals("1")){
-                                startActivity(new Intent(LoginActivity.this, AdminMainActivity.class));
->>>>>>> db7525bfc631a7ceb252419d25bc8c6a770c20c4
+                                startActivity(new Intent(LoginActivity.this, VendorMainActivity.class));
                             } else {
-                                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                startActivity(new Intent(LoginActivity.this, UserMainActivity.class));
                             }
                         } else {
                             Toast.makeText(LoginActivity.this, "ahhaha"+response.message(), Toast.LENGTH_SHORT).show();
@@ -107,7 +93,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         Toast.makeText(LoginActivity.this, "failre"+t, Toast.LENGTH_SHORT).show();
                     }
                 });
-//                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//                startActivity(new Intent(LoginActivity.this, UserMainActivity.class));
                 break;
             case R.id.tv_register:
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));

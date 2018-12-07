@@ -1,4 +1,4 @@
-package com.example.aryparamartha.printit;
+package com.example.aryparamartha.printit.User.MainMenu;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.aryparamartha.printit.R;
 
 import java.util.ArrayList;
 

@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.aryparamartha.printit.Api.ApiClient;
 import com.example.aryparamartha.printit.Api.ApiService;
+import com.example.aryparamartha.printit.User.MainMenu.UserMainActivity;
 import com.example.aryparamartha.printit.model.ResponseRegister;
 
 import retrofit2.Call;
@@ -86,7 +87,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         adminStatus).enqueue(new Callback<ResponseRegister>() {
                     @Override
                     public void onResponse(Call<ResponseRegister> call, Response<ResponseRegister> response) {
-                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                        startActivity(new Intent(RegisterActivity.this, UserMainActivity.class));
                     }
 
                     @Override

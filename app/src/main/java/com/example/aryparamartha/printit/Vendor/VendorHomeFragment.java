@@ -1,4 +1,4 @@
-package com.example.aryparamartha.printit;
+package com.example.aryparamartha.printit.Vendor;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class AdminHomeFragment extends Fragment {
+import com.example.aryparamartha.printit.R;
+
+public class VendorHomeFragment extends Fragment {
 
     @Nullable
     @Override
