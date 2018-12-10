@@ -7,8 +7,13 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+<<<<<<< HEAD:app/src/main/java/com/example/aryparamartha/printit/User/MainMenu/UserMainActivity.java
 import com.example.aryparamartha.printit.User.Location.LocationFragment;
 import com.example.aryparamartha.printit.R;
+=======
+import com.example.aryparamartha.printit.R;
+import com.example.aryparamartha.printit.User.Location.LocationFragment;
+>>>>>>> 2f87070c1a5c28746f649804d36066b238a75397:app/src/main/java/com/example/aryparamartha/printit/User/MainMenu/UserMainActivity.java
 import com.example.aryparamartha.printit.User.Profile.ProfileFragment;
 
 public class UserMainActivity extends AppCompatActivity {
