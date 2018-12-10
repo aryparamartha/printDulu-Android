@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,12 +21,14 @@ public class UserHomeFragment extends Fragment {
     private FileAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<FileItem> fileList;
+    FloatingActionButton btnAdd;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.profile_rv);
+        btnAdd = view.findViewById(R.id.addTrans);
         return view;
     }
 
@@ -55,6 +58,14 @@ public class UserHomeFragment extends Fragment {
                 fileList.get(position).changeText1("Clicked");
                 mAdapter.notifyItemChanged(position);
                 Intent intent = new Intent(getActivity(), UserMainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddUserTrans.class);
                 startActivity(intent);
             }
         });

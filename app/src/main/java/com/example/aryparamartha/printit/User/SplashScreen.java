@@ -1,15 +1,13 @@
 package com.example.aryparamartha.printit.User;
 
 import android.content.Intent;
-<<<<<<< HEAD
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-=======
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
->>>>>>> 2f87070c1a5c28746f649804d36066b238a75397
+
 
 import com.example.aryparamartha.printit.LoginActivity;
 import com.example.aryparamartha.printit.R;
