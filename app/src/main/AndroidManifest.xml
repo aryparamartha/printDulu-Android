@@ -33,7 +33,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".User.MainMenu.AddUserTrans"></activity>
+        <activity android:name=".User.MainMenu.AddTransUser" />
+        <activity android:name=".User.MainMenu.EditTransUser"></activity>
     </application>
 
 </manifest>

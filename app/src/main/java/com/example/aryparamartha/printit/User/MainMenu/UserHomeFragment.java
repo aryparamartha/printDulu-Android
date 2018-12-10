@@ -65,7 +65,7 @@ public class UserHomeFragment extends Fragment {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AddUserTrans.class);
+                Intent intent = new Intent(getActivity(), AddTransUser.class);
                 startActivity(intent);
             }
         });

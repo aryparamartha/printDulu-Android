@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import com.example.aryparamartha.printit.R;
 
-public class AddUserTrans extends AppCompatActivity {
+public class AddTransUser extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_file);
+        setContentView(R.layout.activity_create_trans);
     }
 }
