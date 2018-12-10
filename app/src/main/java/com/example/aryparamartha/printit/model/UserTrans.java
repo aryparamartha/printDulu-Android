@@ -1,12 +1,11 @@
 package com.example.aryparamartha.printit.model;
 
-
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-public class VendorTrans implements Parcelable {
+public class UserTrans implements Parcelable {
 
 	@SerializedName("file_location")
 	private String fileLocation;
@@ -38,7 +37,7 @@ public class VendorTrans implements Parcelable {
 	@SerializedName("format_file")
 	private String formatFile;
 
-	protected VendorTrans(Parcel in) {
+	protected UserTrans(Parcel in) {
 		fileLocation = in.readString();
 		updatedAt = in.readString();
 		namaFile = in.readString();
@@ -51,15 +50,15 @@ public class VendorTrans implements Parcelable {
 		formatFile = in.readString();
 	}
 
-	public static final Creator<VendorTrans> CREATOR = new Creator<VendorTrans>() {
+	public static final Creator<UserTrans> CREATOR = new Creator<UserTrans>() {
 		@Override
-		public VendorTrans createFromParcel(Parcel in) {
-			return new VendorTrans(in);
+		public UserTrans createFromParcel(Parcel in) {
+			return new UserTrans(in);
 		}
 
 		@Override
-		public VendorTrans[] newArray(int size) {
-			return new VendorTrans[size];
+		public UserTrans[] newArray(int size) {
+			return new UserTrans[size];
 		}
 	};
 
@@ -146,7 +145,7 @@ public class VendorTrans implements Parcelable {
 	@Override
  	public String toString(){
 		return 
-			"VendorTrans{" + 
+			"UserTrans{" + 
 			"file_location = '" + fileLocation + '\'' + 
 			",updated_at = '" + updatedAt + '\'' + 
 			",nama_file = '" + namaFile + '\'' + 

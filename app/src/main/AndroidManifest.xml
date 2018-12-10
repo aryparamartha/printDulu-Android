@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".User.MainMenu.AddTransUser" />
-        <activity android:name=".User.MainMenu.EditTransUser"></activity>
+        <activity android:name=".User.MainMenu.DetailFileActivity"></activity>
     </application>
 
 </manifest>

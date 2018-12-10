@@ -3,6 +3,7 @@ package com.example.aryparamartha.printit.Api;
 import com.example.aryparamartha.printit.model.Profile;
 import com.example.aryparamartha.printit.model.ResponseRegister;
 import com.example.aryparamartha.printit.model.UserLogin;
+import com.example.aryparamartha.printit.model.UserTrans;
 import com.example.aryparamartha.printit.model.UserVendor;
 
 import java.util.List;
@@ -46,6 +47,9 @@ public interface ApiService {
 
     @GET("user/vendor")
     Call<List<UserVendor>> showVendor();
+
+    @GET("user/trans")
+    Call<List<UserTrans>> showTransaction();
 
 
 }
