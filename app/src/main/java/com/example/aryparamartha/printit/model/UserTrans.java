@@ -2,6 +2,7 @@ package com.example.aryparamartha.printit.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.provider.BaseColumns;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -37,7 +38,7 @@ public class UserTrans implements Parcelable {
 	@SerializedName("format_file")
 	private String formatFile;
 
-	protected UserTrans(Parcel in) {
+	public UserTrans(Parcel in) {
 		fileLocation = in.readString();
 		updatedAt = in.readString();
 		namaFile = in.readString();
@@ -62,7 +63,21 @@ public class UserTrans implements Parcelable {
 		}
 	};
 
-	public void setFileLocation(String fileLocation){
+    public UserTrans(String created, String format, int idtrans, String location, String name, int trans, String transfile, int transtotal, String updated, int user) {
+        this.createdAt = created;
+        this.formatFile = format;
+        this.idTrans = idtrans;
+        this.fileLocation = location;
+        this.namaFile = name;
+        this.idTrans = trans;
+        this.transFile = transfile;
+        this.transTotal = transtotal;
+        this.updatedAt = updated;
+        this.idUser = user;
+    }
+
+
+    public void setFileLocation(String fileLocation){
 		this.fileLocation = fileLocation;
 	}
 
@@ -176,5 +191,21 @@ public class UserTrans implements Parcelable {
 		dest.writeString(transFile);
 		dest.writeInt(idUser);
 		dest.writeString(formatFile);
+	}
+
+	public static class Entry implements BaseColumns{
+		public static final String TABLE_NAME = "tb_transaction";
+		public static final String COLUMN_LOCATION = "location";
+		public static final String COLUMN_UPDATED = "updated";
+		public static final String COLUMN_NAME = "name";
+		public static final String COLUMN_CREATED = "created";
+		public static final String COLUMN_TRANSTOTAL = "total";
+		public static final String COLUMN_IDTRANS = "idtrans";
+		public static final String COLUMN_TRANS = "id";
+		public static final String COLUMN_TRANSFILE = "file";
+		public static final String COLUMN_USER = "user";
+		public static final String COLUMN_FORMAT = "format";
+
+
 	}
 }

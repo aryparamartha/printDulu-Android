@@ -55,7 +55,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
         preferencesHelper = new PreferencesHelper(getActivity());
 
-        showProfile();
+//        showProfile();
+        showLocalProfile();
     }
 
     private void showProfile() {
@@ -101,5 +102,11 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
     }
 
     private void save() {
+    }
+
+    public void showLocalProfile(){
+        nama_user.setText(preferencesHelper.getName());
+        hp_user.setText(preferencesHelper.getPhone());
+        alamat_user.setText(preferencesHelper.getAddress());
     }
 }

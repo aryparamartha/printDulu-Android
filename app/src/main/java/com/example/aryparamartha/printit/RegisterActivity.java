@@ -67,7 +67,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         });
 
         btnRegister = findViewById(R.id.btn_register);
-        tvVendor = findViewById(R.id.tv_vendor);
 
         btnRegister.setOnClickListener(this);
         tvVendor.setOnClickListener(this);
@@ -95,8 +94,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         Toast.makeText(RegisterActivity.this, ""+t, Toast.LENGTH_SHORT).show();
                     }
                 });
-            case R.id.tv_vendor:
-                startActivity(new Intent(RegisterActivity.this, RegisterVendorActivity.class));
         }
     }
 }

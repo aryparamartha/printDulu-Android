@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.aryparamartha.printit.Api.ApiClient;
+import com.example.aryparamartha.printit.DatabaseHelper;
 import com.example.aryparamartha.printit.R;
 import com.example.aryparamartha.printit.model.UserTrans;
 
@@ -77,7 +78,15 @@ public class UserHomeFragment extends Fragment implements FilleAdapter.OnClickLi
                     @Override
                     public void onResponse(Call<List<UserTrans>> call, Response<List<UserTrans>> response) {
                         if (response.isSuccessful()){
+                            DatabaseHelper databaseHelper = new DatabaseHelper(getContext());
+                            databaseHelper.deleteTransaction();
                             fileList = response.body();
+
+                            for (UserTrans userTrans:fileList){
+                                databaseHelper.insertTransaction(userTrans.getCreatedAt(), userTrans.getFormatFile(), userTrans.getIdTrans()
+                                ,userTrans.getFileLocation(), userTrans.getNamaFile(), userTrans.getId(),userTrans.getTransFile()
+                                        ,userTrans.getTransTotal(),userTrans.getUpdatedAt(),userTrans.getIdUser());
+                            }
                             setAdapter();
                         }else {
                             Toast.makeText(getContext(), "Response Failed", Toast.LENGTH_SHORT).show();
@@ -87,6 +96,9 @@ public class UserHomeFragment extends Fragment implements FilleAdapter.OnClickLi
                     @Override
                     public void onFailure(Call<List<UserTrans>> call, Throwable t) {
                         Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
+                        DatabaseHelper databaseHelper = new DatabaseHelper(getContext());
+                        fileList = databaseHelper.selectTrans();
+                        setAdapter();
                     }
                 });
     }
