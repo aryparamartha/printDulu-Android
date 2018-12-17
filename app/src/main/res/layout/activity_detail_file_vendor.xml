@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Vendor.MainMenu.DetailFileVendorActivity">
+
+    <TextView
+        android:id="@+id/tvDetailFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detail File"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:paddingBottom="25dp"/>
+
+    <ScrollView
+        android:layout_below="@+id/tvDetailFile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama File"
+                android:textSize="18dp"
+                android:paddingLeft="5dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvNamaFile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="File 1"
+                android:layout_below="@+id/tvNama"/>
+
+            <TextView
+                android:id="@+id/tvFileLoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="Lokasi File"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_below="@+id/tvNamaFile"/>
+            <TextView
+                android:id="@+id/tvFilePath"
+                android:layout_width="250dp"
+                android:paddingLeft="5dp"
+                android:layout_height="45dp"
+                android:text="Android/Download/File1.pdf"
+                android:layout_below="@+id/tvFileLoc"
+                />
+            <Button
+                android:id="@+id/buttonDownloadFile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download File"
+                android:layout_below="@id/tvFileLoc"
+                android:layout_toRightOf="@id/tvFilePath"/>
+
+            <TextView
+                android:id="@+id/tvJasa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Harga Jasa"
+                android:textSize="18dp"
+                android:paddingLeft="5dp"
+                android:layout_below="@id/tvFilePath"
+                android:textStyle="bold"/>
+            <EditText
+                android:id="@+id/harga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="18000"
+                android:layout_below="@+id/tvJasa"/>
+
+            <TextView
+                android:id="@+id/tvBukti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="Bukti Pembayaran"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_below="@+id/harga"/>
+            <TextView
+                android:id="@+id/tvBuktiPath"
+                android:layout_width="290dp"
+                android:paddingLeft="5dp"
+                android:layout_height="45dp"
+                android:text="Android/Download/Bukti.jpg"
+                android:layout_below="@+id/tvBukti"/>
+            <Button
+                android:id="@+id/buttonDownloadBukti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buka File"
+                android:layout_below="@id/tvBukti"
+                android:layout_toRightOf="@id/tvBuktiPath"/>
+
+            <TextView
+                android:id="@+id/tvDetailPrint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="Detail Format Print"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_below="@id/tvBuktiPath"/>
+            <TextView
+                android:id="@+id/tvPrintFormat"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:text="Ukuran Kertas A4, Jilid Mika Bening"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/tvDetailPrint"
+                android:background="@drawable/border"/>
+
+            <RelativeLayout
+                android:layout_below="@id/tvPrintFormat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/validate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Validasi Pesanan"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

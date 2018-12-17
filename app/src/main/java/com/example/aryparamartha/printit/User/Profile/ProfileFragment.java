@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.aryparamartha.printit.Api.ApiClient;
+import com.example.aryparamartha.printit.Api.ApiService;
 import com.example.aryparamartha.printit.LoginActivity;
 import com.example.aryparamartha.printit.R;
 import com.example.aryparamartha.printit.Utils.PreferencesHelper;
@@ -31,10 +33,14 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
     Profile profile;
     private PreferencesHelper preferencesHelper;
 
+//    ApiService apiService;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+//        apiService = ApiClient.getService(getContext());
 
         nama_user = view.findViewById(R.id.nama_user);
         hp_user = view.findViewById(R.id.hp_user);
@@ -52,6 +58,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
         logout.setOnClickListener(this);
         saveProfile.setOnClickListener(this);
+
+
 
         preferencesHelper = new PreferencesHelper(getActivity());
 
@@ -96,15 +104,38 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
                 getActivity().finish();
                 break;
             case R.id.save_profile:
-                save();
+                int idVal = preferencesHelper.getID();
+                Log.e("ID_USER", String.valueOf(idVal));
+                save(preferencesHelper.getID(), nama_user.getText().toString(), hp_user.getText().toString(), alamat_user.getText().toString());
                 break;
         }
     }
 
-    private void save() {
+    private void save(int id, String name, String address, String phone) {
+        ApiClient.getService(getContext())
+                .saveProfile(id, name, address, phone)
+                .enqueue(new Callback<com.example.aryparamartha.printit.model.Response>() {
+                    @Override
+                    public void onResponse(Call<com.example.aryparamartha.printit.model.Response> call, Response<com.example.aryparamartha.printit.model.Response> response) {
+                        if (response.isSuccessful()){
+                            Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+                            preferencesHelper.setName(nama_user.getText().toString());
+                            preferencesHelper.setPhone(hp_user.getText().toString());
+                            preferencesHelper.setAddress(alamat_user.getText().toString());
+                        }else {
+                            Toast.makeText(getContext(), "Response Failed", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<com.example.aryparamartha.printit.model.Response> call, Throwable t) {
+                        Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     public void showLocalProfile(){
+        Toast.makeText(getContext(), String.valueOf(preferencesHelper.getID()), Toast.LENGTH_SHORT).show();
         nama_user.setText(preferencesHelper.getName());
         hp_user.setText(preferencesHelper.getPhone());
         alamat_user.setText(preferencesHelper.getAddress());

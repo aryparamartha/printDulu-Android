@@ -5,6 +5,7 @@ import com.example.aryparamartha.printit.model.ResponseRegister;
 import com.example.aryparamartha.printit.model.UserLogin;
 import com.example.aryparamartha.printit.model.UserTrans;
 import com.example.aryparamartha.printit.model.UserVendor;
+import com.example.aryparamartha.printit.model.VendorTrans;
 
 import java.util.List;
 
@@ -14,6 +15,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ApiService {
     @FormUrlEncoded
@@ -50,6 +52,18 @@ public interface ApiService {
 
     @GET("user/trans")
     Call<List<UserTrans>> showTransaction();
+
+    @GET("vendor/trans")
+    Call<List<VendorTrans>> showTransactionVendor();
+
+    @FormUrlEncoded
+    @POST("user/profile/{id}")
+    Call<com.example.aryparamartha.printit.model.Response> saveProfile(
+            @Path("id") int id,
+            @Field("name") String name,
+            @Field("address") String address,
+            @Field("phone") String phone
+            );
 
 
 }

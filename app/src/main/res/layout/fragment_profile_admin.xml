@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserActivity">
+    tools:context=".Vendor.Profile.VendorProfileFragment">
 
     <LinearLayout
         android:id="@+id/layout_profile"
@@ -22,7 +22,7 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/schwi"
+            android:src="@drawable/person"
             android:layout_gravity="center"/>
         <EditText
             android:layout_width="match_parent"

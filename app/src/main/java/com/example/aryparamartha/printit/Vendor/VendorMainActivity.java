@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.example.aryparamartha.printit.R;
+import com.example.aryparamartha.printit.Vendor.MainMenu.VendorHomeFragment;
+import com.example.aryparamartha.printit.Vendor.Profile.VendorProfileFragment;
 
 public class VendorMainActivity extends AppCompatActivity {
 

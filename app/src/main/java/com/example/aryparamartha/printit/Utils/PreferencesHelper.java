@@ -14,6 +14,7 @@ public class PreferencesHelper {
     private final String PHONE="phone";
     private final String ADDRESS="address";
     private final String USER_TYPE="user_type";
+    private final String ID="id";
 
     public PreferencesHelper(Context context){
         sharedPreferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
@@ -41,6 +42,17 @@ public class PreferencesHelper {
                 .putString(NAME,name)
                 .apply();
     }
+
+    public void setID(int id){
+        sharedPreferences.edit()
+                .putInt(ID, id)
+                .apply();
+    }
+
+    public int getID(){
+        return sharedPreferences.getInt(ID,0);
+    }
+
 
     public String getName(){
         return sharedPreferences.getString(NAME,"");
@@ -77,6 +89,7 @@ public class PreferencesHelper {
 
     public void setUserLogin(UserLogin responseLogin){
         setLogin(true);
+        setID(responseLogin.getId());
         setToken(responseLogin.getToken());
         setName(responseLogin.getName());
         setPhone(responseLogin.getPhone());

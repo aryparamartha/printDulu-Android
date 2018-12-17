@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.aryparamartha.printit.model.UserTrans;
+import com.example.aryparamartha.printit.model.VendorTrans;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -118,5 +119,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.close();
 
         return userTrans;
+    }
+
+    public List<VendorTrans> selectVendorTrans(){
+        List<VendorTrans> vendorTrans = new ArrayList<>();
+
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+
+        Cursor cursor = sqLiteDatabase.query(VendorTrans.Entry.TABLE_NAME,null
+                ,null,null,null,null,null);
+
+        if (cursor !=null){
+            cursor.moveToFirst();
+            do {
+                String created = cursor.getString(cursor.getColumnIndex(VendorTrans.Entry.COLUMN_CREATED));
+                String format = cursor.getString(cursor.getColumnIndex(VendorTrans.Entry.COLUMN_FORMAT));
+                int idtrans = cursor.getInt(cursor.getColumnIndex(VendorTrans.Entry.COLUMN_IDTRANS));
+                String location = cursor.getString(cursor.getColumnIndex(VendorTrans.Entry.COLUMN_LOCATION));
+                String name = cursor.getString(cursor.getColumnIndex(VendorTrans.Entry.COLUMN_NAME));
+                int trans = cursor.getInt(cursor.getColumnIndex(VendorTrans.Entry.COLUMN_TRANS));
+                String transfile = cursor.getString(cursor.getColumnIndex(VendorTrans.Entry.COLUMN_TRANSFILE));
+                int transtotal = cursor.getInt(cursor.getColumnIndex(VendorTrans.Entry.COLUMN_TRANSTOTAL));
+                String updated = cursor.getString(cursor.getColumnIndex(VendorTrans.Entry.COLUMN_UPDATED));
+                int user = cursor.getInt(cursor.getColumnIndex(VendorTrans.Entry.COLUMN_USER));
+
+                VendorTrans tmp=new VendorTrans(created, format, idtrans, location, name, trans, transfile, transtotal, updated, user);
+
+                vendorTrans.add(tmp);
+            }while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        sqLiteDatabase.close();
+
+        return vendorTrans;
     }
 }

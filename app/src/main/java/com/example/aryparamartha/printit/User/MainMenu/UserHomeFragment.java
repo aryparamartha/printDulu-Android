@@ -49,9 +49,9 @@ public class UserHomeFragment extends Fragment implements FilleAdapter.OnClickLi
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         final ArrayList<FileItem> fileList = new ArrayList<>();
-//        fileList.add(new FileItem(R.drawable.file, "File 1", "Detail File 1"));
-//        fileList.add(new FileItem(R.drawable.file, "File 2", "Detail File 2"));
-//        fileList.add(new FileItem(R.drawable.file, "File 3", "Detail File 3"));
+//        fileList.add(new VendorFileItem(R.drawable.file, "File 1", "Detail File 1"));
+//        fileList.add(new VendorFileItem(R.drawable.file, "File 2", "Detail File 2"));
+//        fileList.add(new VendorFileItem(R.drawable.file, "File 3", "Detail File 3"));
 //
 //        mRecyclerView.setHasFixedSize(true);
 //        mLayoutManager = new LinearLayoutManager(this.getActivity());

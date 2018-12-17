@@ -1,4 +1,4 @@
-package com.example.aryparamartha.printit.Vendor;
+package com.example.aryparamartha.printit.Vendor.Profile;
 
 import android.content.Context;
 import android.content.Intent;

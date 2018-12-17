@@ -4,8 +4,8 @@
     package="com.example.aryparamartha.printit">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -36,7 +36,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".User.MainMenu.AddTransUser" />
-        <activity android:name=".User.MainMenu.DetailFileActivity"></activity>
+        <activity android:name=".User.MainMenu.DetailFileActivity" />
+        <activity android:name=".Vendor.MainMenu.VendorDetailFileActivity"/>
     </application>
 
 </manifest>
