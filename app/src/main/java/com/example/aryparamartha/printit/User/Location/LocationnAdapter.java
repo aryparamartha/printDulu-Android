@@ -39,7 +39,7 @@ public class LocationnAdapter extends RecyclerView.Adapter<LocationnAdapter.Loca
         UserVendor userVendor = mData.get(i);
         locationViewHolder.tv_locName.setText(userVendor.getName());
         locationViewHolder.tv_locAddress.setText(userVendor.getAddress());
-        locationViewHolder.locImg.setImageResource(R.drawable.schwi);
+        locationViewHolder.locImg.setImageResource(R.drawable.location);
 
     }
 

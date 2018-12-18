@@ -11,7 +11,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import com.example.aryparamartha.printit.Api.ApiClient;
 import com.example.aryparamartha.printit.DatabaseHelper;
@@ -30,6 +34,8 @@ public class UserHomeFragment extends Fragment implements FilleAdapter.OnClickLi
     private FilleAdapter mAdapter;
     private List<UserTrans> fileList;
     FloatingActionButton btnAdd;
+    private ViewFlipper simpleViewFlipper;
+    int[] images = {R.drawable.promo1, R.drawable.promo2, R.drawable.promo3};
 
     @Nullable
     @Override
@@ -37,6 +43,21 @@ public class UserHomeFragment extends Fragment implements FilleAdapter.OnClickLi
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mRecyclerView = (RecyclerView) view.findViewById(R.id.profile_rv);
         btnAdd = view.findViewById(R.id.addTrans);
+        simpleViewFlipper = (ViewFlipper) view.findViewById(R.id.flipper_view);
+
+        for(int i=0; i<images.length; i++){
+            ImageView imageView = new ImageView(getContext());
+            imageView.setImageResource(images[i]);
+            simpleViewFlipper.addView(imageView);
+        }
+
+        Animation in = AnimationUtils.loadAnimation(getContext(), android.R.anim.slide_in_left);
+        Animation out = AnimationUtils.loadAnimation(getContext(), android.R.anim.slide_out_right);
+
+        simpleViewFlipper.setInAnimation(in);
+        simpleViewFlipper.setOutAnimation(out);
+        simpleViewFlipper.setFlipInterval(3000);
+        simpleViewFlipper.setAutoStart(true);
         return view;
     }
 

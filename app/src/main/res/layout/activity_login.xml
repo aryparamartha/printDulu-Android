@@ -9,10 +9,11 @@
     android:padding="10dp"
     android:gravity="center_vertical">
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="140dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:adjustViewBounds="true"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/logo2"/>
     <EditText
         android:id="@+id/et_email"
         android:layout_marginTop="20dp"

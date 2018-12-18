@@ -6,7 +6,7 @@
         android:id="@+id/promo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Info dan Promo"
+        android:text="Info Aplikasi"
         android:textAlignment="center"
         android:textStyle="bold"
         android:textColor="#000"
@@ -16,6 +16,8 @@
         android:layout_below="@+id/promo"
         android:layout_width="match_parent"
         android:layout_height="180dp">
+
+
     </ViewFlipper>
 
     <android.support.v7.widget.RecyclerView

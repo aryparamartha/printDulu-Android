@@ -69,7 +69,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         btnRegister = findViewById(R.id.btn_register);
 
         btnRegister.setOnClickListener(this);
-        tvVendor.setOnClickListener(this);
+//        tvVendor.setOnClickListener(this);
         service = ApiClient.getService(this);
     }
 
