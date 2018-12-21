@@ -82,10 +82,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return lastId;
     }
 
-    public void deleteTransaction(){
-        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
-        sqLiteDatabase.delete(UserTrans.Entry.TABLE_NAME, null, null);
-    }
+//    public void deleteTransaction(){
+//        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+//        sqLiteDatabase.delete(UserTrans.Entry.TABLE_NAME, null, null);
+//    }
 
     public List<UserTrans> selectTrans(){
         List<UserTrans> userTrans = new ArrayList<>();

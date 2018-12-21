@@ -2,6 +2,7 @@ package com.example.aryparamartha.printit.User.MainMenu;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -36,14 +37,18 @@ public class DetailFileActivity extends AppCompatActivity {
         userTrans = getIntent().getParcelableExtra(KEY_FILE);
 
         namaFile = findViewById(R.id.file_name);
-        locFile = findViewById(R.id.fileLoc);
-        hargaFile = findViewById(R.id.filePath);
+        locFile = findViewById(R.id.filePath);
+        hargaFile = findViewById(R.id.price);
         buktiPembayaran = findViewById(R.id.buktiPath);
         formatPrint = findViewById(R.id.detailPrint);
 
-        uploadFile = findViewById(R.id.buttonOpen);
+//        uploadFile = findViewById(R.id.buttonOpen);
         uploadBukti = findViewById(R.id.buttonUpload);
         saveTrans = findViewById(R.id.sendFile);
 
+    }
+
+    public void onClick(View v){
+        switch ()
     }
 }

@@ -42,7 +42,7 @@ public class AddTransUser extends AppCompatActivity {
         namaFile = findViewById(R.id.namaFile);
         locFile = findViewById(R.id.filePath);
         formatPrint = findViewById(R.id.printFormat);
-        uploadFile = findViewById(R.id.buttonOpenFile);
+        //uploadFile = findViewById(R.id.buttonOpenFile);
         saveTrans = findViewById(R.id.createTrans);
 
         uploadFile.setOnClickListener(new View.OnClickListener(){

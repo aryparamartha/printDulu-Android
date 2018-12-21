@@ -54,6 +54,12 @@ public class UserVendor implements Parcelable {
 		email = in.readString();
 	}
 
+	public UserVendor(String nama, int id_user, int id_status){
+		this.name = nama;
+		this.id = id_user;
+		this.adminStatus = id_status;
+	}
+
 	public static final Creator<UserVendor> CREATOR = new Creator<UserVendor>() {
 		@Override
 		public UserVendor createFromParcel(Parcel in) {

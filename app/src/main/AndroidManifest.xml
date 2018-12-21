@@ -17,7 +17,6 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".User.MainMenu.UserMainActivity" />
         <activity android:name=".LoginActivity" />
-
         <activity android:name=".Vendor.VendorMainActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".User.SplashScreen">
@@ -27,15 +26,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".User.MainMenu.AddTransUser" />
+        <!-- <activity android:name=".User.MainMenu.AddTransUser" /> -->
         <activity android:name=".User.MainMenu.DetailFileActivity" />
-        <activity android:name=".Vendor.MainMenu.VendorDetailFileActivity"/>
+        <activity android:name=".Vendor.MainMenu.VendorDetailFileActivity" />
+        <activity android:name=".User.MainMenu.CreateTransActivity" />
 
         <service android:name=".MessagingService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <activity android:name=".User.Transaction.PilihLokasi"></activity>
     </application>
 
 </manifest>

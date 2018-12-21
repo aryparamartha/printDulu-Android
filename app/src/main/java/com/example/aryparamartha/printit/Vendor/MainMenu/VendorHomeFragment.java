@@ -54,7 +54,7 @@ public class VendorHomeFragment extends Fragment implements VendorFileAdapter.On
                     public void onResponse(Call<List<VendorTrans>> call, Response<List<VendorTrans>> response) {
                         if (response.isSuccessful()){
                             DatabaseHelper databaseHelper = new DatabaseHelper(getContext());
-                            databaseHelper.deleteTransaction();
+//                            databaseHelper.deleteTransaction();
                             vendorFileList= response.body();
 
                             for (VendorTrans vendorTrans:vendorFileList){

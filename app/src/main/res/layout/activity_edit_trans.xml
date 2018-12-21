@@ -40,24 +40,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
-                android:text="Lokasi File"
+                android:text="Link File"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:layout_below="@+id/file_name"/>
             <EditText
                 android:id="@+id/filePath"
-                android:layout_width="290dp"
+                android:layout_width="match_parent"
                 android:paddingLeft="5dp"
                 android:layout_height="wrap_content"
                 android:text="Android/Download/File1.pdf"
                 android:layout_below="@+id/fileLoc"/>
-            <Button
-                android:id="@+id/buttonOpen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Buka File"
-                android:layout_below="@id/fileLoc"
-                android:layout_toRightOf="@id/filePath"/>
+            <!--<Button-->
+                <!--android:id="@+id/buttonOpen"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Buka File"-->
+                <!--android:layout_below="@id/fileLoc"-->
+                <!--android:layout_toRightOf="@id/filePath"/>-->
 
             <TextView
                 android:id="@+id/jasa"

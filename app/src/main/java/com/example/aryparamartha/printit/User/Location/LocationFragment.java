@@ -1,5 +1,6 @@
 package com.example.aryparamartha.printit.User.Location;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,6 +14,10 @@ import android.widget.Toast;
 
 import com.example.aryparamartha.printit.Api.ApiClient;
 import com.example.aryparamartha.printit.R;
+import com.example.aryparamartha.printit.User.MainMenu.CreateTransActivity;
+import com.example.aryparamartha.printit.User.MainMenu.DetailFileActivity;
+import com.example.aryparamartha.printit.model.User;
+import com.example.aryparamartha.printit.model.UserTrans;
 import com.example.aryparamartha.printit.model.UserVendor;
 
 import java.util.ArrayList;
@@ -27,8 +32,8 @@ public class LocationFragment extends Fragment {
     View v;
 
     private RecyclerView mLocation;
-    private List<UserVendor> listLoc = new ArrayList<>();
-    private LocationnAdapter  adapter;
+    private List<UserVendor> listLoc;
+    private LocationAdapter adapter;
 
     public LocationFragment(){
     }
@@ -50,7 +55,7 @@ public class LocationFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        final ArrayList<UserVendor> listLoc = new ArrayList<>();
         showVender();
     }
 
@@ -62,7 +67,7 @@ public class LocationFragment extends Fragment {
                     public void onResponse(Call<List<UserVendor>> call, Response<List<UserVendor>> response) {
                         if (response.isSuccessful()){
                             listLoc = response.body();
-                            adapter = new LocationnAdapter(getContext(), listLoc);
+                            adapter = new LocationAdapter(getContext(), listLoc);
                             mLocation.setLayoutManager(new LinearLayoutManager(getContext()));
                             mLocation.setAdapter(adapter);
                         }else {
@@ -76,4 +81,15 @@ public class LocationFragment extends Fragment {
                     }
                 });
     }
+
+
+
+//    public void onClick(int position) {
+//        UserVendor userVendor= listLoc.get(position);
+//        Bundle bundle = new Bundle();
+//        bundle.putParcelable(CreateTransActivity.KEY_FILE, userVendor);
+//        Intent intent = new Intent(getContext(), CreateTransActivity.class);
+//        intent.putExtras(bundle);
+//        startActivity(intent);
+//    }
 }

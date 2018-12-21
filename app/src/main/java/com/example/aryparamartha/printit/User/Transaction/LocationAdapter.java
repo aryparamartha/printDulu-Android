@@ -1,4 +1,4 @@
-package com.example.aryparamartha.printit.User.Location;
+package com.example.aryparamartha.printit.User.Transaction;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -14,12 +14,12 @@ import com.example.aryparamartha.printit.model.UserVendor;
 
 import java.util.List;
 
-public class LocationnAdapter extends RecyclerView.Adapter<LocationnAdapter.LocationViewHolder> {
+public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.LocationViewHolder> {
 
     Context mContext;
     List<UserVendor> mData;
 
-    public LocationnAdapter(Context mContext, List<UserVendor> mData) {
+    public LocationAdapter(Context mContext, List<UserVendor> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }

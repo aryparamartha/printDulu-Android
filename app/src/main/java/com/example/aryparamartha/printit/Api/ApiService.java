@@ -1,6 +1,8 @@
 package com.example.aryparamartha.printit.Api;
 
+import com.example.aryparamartha.printit.model.CreateTrans;
 import com.example.aryparamartha.printit.model.Profile;
+import com.example.aryparamartha.printit.model.ResponseCreateTrans;
 import com.example.aryparamartha.printit.model.ResponseRegister;
 import com.example.aryparamartha.printit.model.UserLogin;
 import com.example.aryparamartha.printit.model.UserTrans;
@@ -70,6 +72,16 @@ public interface ApiService {
     Call<com.example.aryparamartha.printit.model.Response> saveFCM(
         @Path("id") int id,
         @Field("fcm_token") String fcm_token
+    );
+
+    @FormUrlEncoded
+    @POST("trans/create")
+    Call<ResponseCreateTrans> createTrans(
+            @Field("id_user") String idUser,
+            @Field("id_vendor") String idVendor,
+            @Field("nama_file") String namaFile,
+            @Field("file_location") String fileLoc,
+            @Field("format_file") String formatFile
     );
 
 

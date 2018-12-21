@@ -33,6 +33,7 @@ public class UserHomeFragment extends Fragment implements FilleAdapter.OnClickLi
     private RecyclerView mRecyclerView;
     private FilleAdapter mAdapter;
     private List<UserTrans> fileList;
+
     FloatingActionButton btnAdd;
     private ViewFlipper simpleViewFlipper;
     int[] images = {R.drawable.promo1, R.drawable.promo2, R.drawable.promo3};
@@ -61,30 +62,15 @@ public class UserHomeFragment extends Fragment implements FilleAdapter.OnClickLi
         return view;
     }
 
-    /*public void changeItem(int position, String text){
-        fileList.get(position).changeText1(text);
-        mAdapter.notifyItemChanged(position);
-    }*/
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         final ArrayList<FileItem> fileList = new ArrayList<>();
-//        fileList.add(new VendorFileItem(R.drawable.file, "File 1", "Detail File 1"));
-//        fileList.add(new VendorFileItem(R.drawable.file, "File 2", "Detail File 2"));
-//        fileList.add(new VendorFileItem(R.drawable.file, "File 3", "Detail File 3"));
-//
-//        mRecyclerView.setHasFixedSize(true);
-//        mLayoutManager = new LinearLayoutManager(this.getActivity());
-//        mAdapter = new FileAdapter(fileList);
-//
-//        mRecyclerView.setLayoutManager(mLayoutManager);
-//        mRecyclerView.setAdapter(mAdapter);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AddTransUser.class);
+                Intent intent = new Intent(getActivity(), CreateTransActivity.class);
                 startActivity(intent);
             }
         });
@@ -100,7 +86,7 @@ public class UserHomeFragment extends Fragment implements FilleAdapter.OnClickLi
                     public void onResponse(Call<List<UserTrans>> call, Response<List<UserTrans>> response) {
                         if (response.isSuccessful()){
                             DatabaseHelper databaseHelper = new DatabaseHelper(getContext());
-                            databaseHelper.deleteTransaction();
+//                            databaseHelper.deleteTransaction();
                             fileList = response.body();
 
                             for (UserTrans userTrans:fileList){
