@@ -11,12 +11,15 @@ import com.example.aryparamartha.printit.model.VendorTrans;
 
 import java.util.List;
 
+import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 
 public interface ApiService {
@@ -82,6 +85,18 @@ public interface ApiService {
             @Field("nama_file") String namaFile,
             @Field("file_location") String fileLoc,
             @Field("format_file") String formatFile
+    );
+
+    @FormUrlEncoded
+    @POST("trans/update/{id}")
+    Call<Void> updateTrans(
+            @Path("id") int id,
+            @Field("nama_file") String namaFile,
+            @Field("file_location") String fileLocation,
+            @Field("format_file") String formatFile,
+            @Field("nomor_transfer") String buktiPembayaran,
+            @Field("trans_total") String transTotal,
+            @Field("id_status") String idStatus
     );
 
 

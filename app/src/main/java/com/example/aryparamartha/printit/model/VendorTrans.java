@@ -30,7 +30,7 @@ public class VendorTrans implements Parcelable {
 	@SerializedName("id")
 	private int id;
 
-	@SerializedName("trans_file")
+	@SerializedName("nomer_transfer")
 	private String transFile;
 
 	@SerializedName("id_user")

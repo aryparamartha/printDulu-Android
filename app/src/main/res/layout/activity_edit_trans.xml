@@ -81,24 +81,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
-                android:text="Bukti Pembayaran"
+                android:text="Nomor Pembayaran"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:layout_below="@+id/price"/>
             <EditText
                 android:id="@+id/buktiPath"
-                android:layout_width="290dp"
+                android:layout_width="match_parent"
                 android:paddingLeft="5dp"
                 android:layout_height="wrap_content"
-                android:text="Android/Download/Bukti.jpg"
+                android:text="0847882897861"
                 android:layout_below="@+id/bukti"/>
-            <Button
-                android:id="@+id/buttonUpload"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Buka File"
-                android:layout_below="@id/bukti"
-                android:layout_toRightOf="@id/buktiPath"/>
 
             <TextView
                 android:id="@+id/detailPrint"
