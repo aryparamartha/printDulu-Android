@@ -65,5 +65,12 @@ public interface ApiService {
             @Field("phone") String phone
             );
 
+    @FormUrlEncoded
+    @POST("user/save/fcm/{id}")
+    Call<com.example.aryparamartha.printit.model.Response> saveFCM(
+        @Path("id") int id,
+        @Field("fcm_token") String fcm_token
+    );
+
 
 }

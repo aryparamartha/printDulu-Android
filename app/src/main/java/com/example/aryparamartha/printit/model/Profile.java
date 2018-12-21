@@ -13,11 +13,17 @@ public class Profile{
 	@SerializedName("phone")
 	private String phone;
 
+	@SerializedName("profile_pic")
+	private String profilePic;
+
 	@SerializedName("name")
 	private String name;
 
+	@SerializedName("fcm_token")
+	private String fcmToken;
+
 	@SerializedName("rek_bank")
-	private Object rekBank;
+	private String rekBank;
 
 	@SerializedName("admin_status")
 	private int adminStatus;
@@ -26,7 +32,7 @@ public class Profile{
 	private String createdAt;
 
 	@SerializedName("email_verified_at")
-	private Object emailVerifiedAt;
+	private int emailVerifiedAt;
 
 	@SerializedName("id")
 	private int id;
@@ -58,6 +64,14 @@ public class Profile{
 		return phone;
 	}
 
+	public void setProfilePic(String profilePic){
+		this.profilePic = profilePic;
+	}
+
+	public String getProfilePic(){
+		return profilePic;
+	}
+
 	public void setName(String name){
 		this.name = name;
 	}
@@ -66,11 +80,19 @@ public class Profile{
 		return name;
 	}
 
-	public void setRekBank(Object rekBank){
+	public void setFcmToken(String fcmToken){
+		this.fcmToken = fcmToken;
+	}
+
+	public String getFcmToken(){
+		return fcmToken;
+	}
+
+	public void setRekBank(String rekBank){
 		this.rekBank = rekBank;
 	}
 
-	public Object getRekBank(){
+	public String getRekBank(){
 		return rekBank;
 	}
 
@@ -90,11 +112,11 @@ public class Profile{
 		return createdAt;
 	}
 
-	public void setEmailVerifiedAt(Object emailVerifiedAt){
+	public void setEmailVerifiedAt(int emailVerifiedAt){
 		this.emailVerifiedAt = emailVerifiedAt;
 	}
 
-	public Object getEmailVerifiedAt(){
+	public int getEmailVerifiedAt(){
 		return emailVerifiedAt;
 	}
 
@@ -121,7 +143,9 @@ public class Profile{
 			"address = '" + address + '\'' + 
 			",updated_at = '" + updatedAt + '\'' + 
 			",phone = '" + phone + '\'' + 
+			",profile_pic = '" + profilePic + '\'' + 
 			",name = '" + name + '\'' + 
+			",fcm_token = '" + fcmToken + '\'' + 
 			",rek_bank = '" + rekBank + '\'' + 
 			",admin_status = '" + adminStatus + '\'' + 
 			",created_at = '" + createdAt + '\'' + 

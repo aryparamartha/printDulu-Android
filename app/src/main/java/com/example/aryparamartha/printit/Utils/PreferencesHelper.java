@@ -15,6 +15,7 @@ public class PreferencesHelper {
     private final String ADDRESS="address";
     private final String USER_TYPE="user_type";
     private final String ID="id";
+    private final String FCM_TOKEN="fcm_token";
 
     public PreferencesHelper(Context context){
         sharedPreferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
@@ -36,6 +37,15 @@ public class PreferencesHelper {
     public String getToken(){
         return sharedPreferences.getString(TOKEN,"");
     }
+
+    public void setFCMToken(String fcm_token){
+        sharedPreferences.edit().putString(FCM_TOKEN,fcm_token).apply();
+    }
+
+    public String getFCMToken() {
+        return sharedPreferences.getString(FCM_TOKEN, "");
+    }
+
 
     public void setName(String name){
         sharedPreferences.edit()

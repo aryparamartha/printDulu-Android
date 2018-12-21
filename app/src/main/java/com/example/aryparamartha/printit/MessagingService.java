@@ -11,6 +11,7 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.example.aryparamartha.printit.User.MainMenu.UserMainActivity;
+import com.example.aryparamartha.printit.Utils.PreferencesHelper;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -19,6 +20,8 @@ public class MessagingService extends FirebaseMessagingService{
     @Override
     public void onNewToken(String s) {
         //super.onNewToken(s);
+        PreferencesHelper preferencesHelper = new PreferencesHelper(this);
+        preferencesHelper.setFCMToken(s);
         Log.d("token",s);
     }
 
